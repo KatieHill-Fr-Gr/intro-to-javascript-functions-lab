@@ -54,7 +54,8 @@ Complete the exercise in the space below:
 
 
 const isCharAVowel= (char) => {
-    if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u" || char === 'A' || char === 'E' || char === 'I' || char === 'O' || char === 'U') {
+     char = char.lowerCase()
+    if (char === "a" || char === "e" || char === "i" || char === "o" || char === "u") {
         return "True";
     } else {
         return "False";
@@ -155,12 +156,14 @@ Complete the exercise in the space below:
 */
 
 const convertTemperature = (temperature, scale) => {
-    if (scale === "C") {
+    if (scale.toLowerCase() === "C") {
         return (temperature * 1.8) + 32;
-    } else if (scale === "F") {
+    } else if (scale.toLowerCase() === "F") {
         return (temperature - 32) / 1.8;
+    } else {
+            return "n/a";
+        }
     }
-}
 
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
 
@@ -182,13 +185,13 @@ Complete the exercise in the space below:
 */
 
 const basicCalculator = (x, y, operator) => {
-    if (operator === "add") {
+    if (operator.toLowerCase() === "add") {
         return x + y;
-    } else if (operator === "subtract") {
+    } else if (operator.toLowerCase() === "subtract") {
         return x - y;
-    } else if (operator === "multiply") {
+    } else if (operator.toLowerCase() === "multiply") {
         return x * y;
-    } else if (operator === "divide") {
+    } else if (operator.toLowerCase() === "divide") {
         return x / y;
     }
 }
